@@ -1,0 +1,74 @@
+/* Wrapper to center the header in a dark background */
+.header-wrapper {
+  padding: 32px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main header box */
+.header {
+  width: 1360px;
+  height: 40px;
+  background-color: #f3f3f3;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  box-sizing: border-box;
+  font-family: "Cabinet Grotesk", sans-serif;
+}
+
+/* Left container: logo + date/location */
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__logo {
+  width: 89px;
+  height: auto;
+}
+
+/* Date and Location */
+.header__date_location {
+  font-size: 16px;
+  color: #111;
+  font-weight: 500;
+}
+
+/* Right container: button + user + avatar */
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__add-close-btn {
+  background: none;
+  border: none;
+  color: #111;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header__add-close-btn:hover {
+  text-decoration: underline;
+}
+
+.header__username {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+}
+
+.header__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
