@@ -1,0 +1,22 @@
+.cards {
+  border-radius: 16px;
+
+  max-width: 1024px; /* or 960px based on your exact card width */
+}
+
+.cards__weather-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  padding-left: 8px;
+}
+
+.cards__list {
+  display: flex;
+  justify-content: space-between; /* even spacing */
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: nowrap;
+}
