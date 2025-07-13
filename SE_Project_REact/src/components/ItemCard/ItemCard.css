@@ -6,6 +6,8 @@
   overflow: hidden;
   position: relative;
   background-color: #E9E9E9; /* from Figma */
+  position: relative; /* Required for absolute positioning */
+
 }
 
 .item-card__content {
