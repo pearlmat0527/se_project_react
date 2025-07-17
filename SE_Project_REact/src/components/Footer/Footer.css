@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  justify-content: space-between; /* ✅ Places left & right sides apart */
+  align-items: center;
+  padding: 24px 40px;
+  background-color: #f3f3f3; /* Match your Figma */
+  font-size: 14px;
+  font-weight: 400;
+  color:  #000000;
+  width: 1358px;
+height: 20px;
+top: 778px;
+left: 40px;
+margin-top: 171px;
+margin-bottom: 24px;
+opacity: 1;
+
+
+
+  margin-top: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer__text,
+.footer__year {
+  white-space: nowrap;
+}

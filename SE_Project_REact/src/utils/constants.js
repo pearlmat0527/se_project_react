@@ -35,4 +35,50 @@ export const defaultClothingItems = [
     weather: "cold",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
   },
+  {
+    _id: 6,
+    name: "Coat",
+    weather: "cold",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
+  },
+  {
+    _id: 7,
+    name: "Coat",
+    weather: "cold",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
+  },
+  {
+    _id: 9,
+    name: "Coat",
+    weather: "cold",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
+  },
+  {
+    _id: 10,
+    name: "Cap",
+    weather: "hot",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
+  },
+  {
+    _id: 12,
+    name: "Cap",
+    weather: "hot",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
+  },
+  {
+    _id: 13,
+    name: "Cap",
+    weather: "hot",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
+  },
 ];
+
+
+// utils/constants.js or utils/weather.js
+
+export const DEFAULT_COORDINATES = {
+  latitude: 32.7767, // Dallas example
+  longitude: -96.797,
+};
+
+export const apiKey = "d140cadef9252eb836105d9efa1bf8b7"; // Replace with your actual API key

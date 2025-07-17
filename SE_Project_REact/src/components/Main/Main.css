@@ -1,7 +1,7 @@
 .cards {
   border-radius: 16px;
 
-  max-width: 1024px; /* or 960px based on your exact card width */
+  max-width: 1400px; /* or 960px based on your exact card width */
 }
 
 .cards__weather-text {
@@ -13,10 +13,14 @@
 
 .cards__list {
   display: flex;
-  
+  flex-wrap: wrap; /* ✅ Allows wrapping */
   gap: 20px;
   list-style: none;
   padding: 0;
-  margin: 0;
-  flex-wrap: nowrap;
+  margin: 0 auto;
+}
+
+.cards__list-item {
+  flex: 0 0 calc(25% - 15px); /* 4 items per row accounting for gaps */
+  box-sizing: border-box;
 }
