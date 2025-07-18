@@ -1,19 +1,53 @@
-.cards {
+/* .cards {
   border-radius: 16px;
 
-  max-width: 1400px; /* or 960px based on your exact card width */
+  max-width: 1400px; /* or 960px based on your exact card width *
+} */
+
+.cards {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.cards__weather-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  width: 330px;
+  height: 25px;
+  padding-left: 0; /* Ensure it aligns with other content */
+  padding-top: 40px;
+  padding-bottom: 34px;
 }
 
-.cards__weather-text {
+/* .cards__weather-text {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 24px;
   padding-left: 8px;
-}
+} */
 
 .cards__list {
   display: flex;
-  flex-wrap: wrap; /* ✅ Allows wrapping */
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cards__list-item {
+  width: calc((100% - 60px) / 4);  /* 3 gaps of 20px = 60px total between 4 items */
+
+  box-sizing: border-box;
+}
+
+/* 
+.cards__list {
+  display: flex;
+  flex-wrap: wrap; 
   gap: 20px;
   list-style: none;
   padding: 0;
@@ -21,6 +55,6 @@
 }
 
 .cards__list-item {
-  flex: 0 0 calc(25% - 15px); /* 4 items per row accounting for gaps */
+  flex: 0 0 calc(25% - 15px); 
   box-sizing: border-box;
-}
+} */

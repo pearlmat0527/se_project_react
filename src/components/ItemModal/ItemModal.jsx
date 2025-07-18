@@ -1,4 +1,5 @@
 import "./ItemModal.css";
+import CloseIcon from "../../assets/Modal_Preview_close.svg"; // adjust path if needed
 
 function ItemModal({ activeModal, card, onClose }) {
   if (activeModal !== "preview" || !card) return null;
@@ -11,11 +12,11 @@ function ItemModal({ activeModal, card, onClose }) {
           className="modal__close"
           aria-label="Close preview modal"
         >
-          ✕
+          <img src={CloseIcon} alt="Close" className="modal__close-icon" />
         </button>
+
         <img src={card.link} alt={card.name} className="modal__image" />
 
-        {/* ✅ Grouped info */}
         <div className="modal__info">
           <h2 className="modal__caption">{card.name}</h2>
           <p className="modal__weather">Weather: {card.weather}</p>

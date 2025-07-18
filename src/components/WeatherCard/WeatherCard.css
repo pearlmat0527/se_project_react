@@ -29,7 +29,7 @@
   width: 100%;
   
 } */
-
+/* 
 .weather-card {
   position: relative;
   width: 100%;
@@ -37,7 +37,7 @@
   height: 80px;
   border-radius: 12px;
   overflow: hidden;
-  background-color: #00aaff; /* fallback in case image fails */
+  background-color: #00aaff; 
   margin: 0 auto;
 }
 
@@ -50,6 +50,40 @@
   color: #ffffff;
   z-index: 1;
 
+  width: 69px;
+  height: 40px;
+  top: 20px;
+  left: 16px;
+  opacity: 1;
+}
+
+.weather-card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+} */
+
+
+.weather-card {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #00aaff;
+}
+
+.weather-card__temp {
+  font-size: 36px;
+  line-height: 40px;
+  margin: 0;
+  position: absolute;
+  color: #ffffff;
+  z-index: 1;
   width: 69px;
   height: 40px;
   top: 20px;

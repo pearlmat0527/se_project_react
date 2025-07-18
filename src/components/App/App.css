@@ -1,12 +1,27 @@
-/* Ensure .page fills the height */
+/* Ensure .page fills the height
 .page {
   min-height: 100vh;
   background-color: #F3F3F3;
 }
 
-/* Optional layout styling */
+/* Optional layout styling 
 .page__content {
-/*  max-width: 1360px;*/
+ max-width: 1360px;
   margin: 0 auto;
   padding: 24px;
+}*/
+
+
+.page {
+  min-height: 100vh;
+  margin: 0;
+  padding-left: 40px;
+  background-color: #f3f3f3;
+}
+
+.page__content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
 }

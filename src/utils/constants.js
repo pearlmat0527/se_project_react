@@ -71,6 +71,24 @@ export const defaultClothingItems = [
     weather: "hot",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
   },
+  {
+    _id: 14,
+    name: "Hoodie",
+    weather: "warm",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Hoodie.png?etag=5f52451d0958ccb1016c78a45603a4e8",
+  },
+  {
+    _id: 15,
+    name: "Hoodie",
+    weather: "warm",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Hoodie.png?etag=5f52451d0958ccb1016c78a45603a4e8",
+  },
+  {
+    _id: 16,
+    name: "Hoodie",
+    weather: "warm",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Hoodie.png?etag=5f52451d0958ccb1016c78a45603a4e8",
+  },
 ];
 
 

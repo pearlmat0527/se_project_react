@@ -35,9 +35,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
 }
-
 .form-modal__title {
   font-size: 20px;
   font-weight: bold;
@@ -111,4 +110,16 @@
   background-color: rgba(0, 0, 0, 0.1);
   cursor: not-allowed;
   color: rgba(255, 255, 255, 0.6);
+}
+
+.form-modal__close {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.form-modal__close-icon {
+  width: 20px;
+  height: 20px;
 }
