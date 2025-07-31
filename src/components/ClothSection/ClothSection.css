@@ -1,0 +1,99 @@
+.clothing-section {
+  display: flex;
+  flex-direction: column;  /* stack children vertically */
+  gap: 20px;               /* space between header and grid */
+  padding: 20px;
+      margin-left: 200px;
+  margin-top: 10px;
+}
+.clothing-section__header {
+
+  display: flex;
+  gap: 20px;
+
+  align-items: center;
+}
+
+
+.clothing-section__title {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 100%; /* or line-height: 1; */
+  letter-spacing: 0;
+  margin: 0;
+  color:#000000;
+;
+}
+
+.clothing-section__add-button {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 100%; /* Equivalent to line-height: 1 */
+  letter-spacing: 0;
+  background: transparent;
+  border: none;
+  color: #00000099;
+;
+  cursor: pointer;
+  padding: 0;
+}
+.clothing-section__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 40px;
+  justify-content: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0px;
+}
+
+.clothing-section__grid-item {
+  width: 325px;
+  height: 328px;
+  background-color: #f3f3f3;
+  border: 2px solid #e7e7e7;
+  border-radius: 20px;
+  text-align: center;
+  padding: 0; /* Let image fill the full height */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.clothing-section__item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.clothing-section__item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+.clothing-section__item-name {
+  position: absolute;
+  width: 109px;
+  height: 24px;
+
+  left: 50%;
+  width: 109px;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 24px;
+  padding: 0 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}

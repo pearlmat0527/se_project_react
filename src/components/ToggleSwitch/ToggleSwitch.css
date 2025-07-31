@@ -1,0 +1,78 @@
+  .toggle-switch {
+    width: 56px;
+    height: 28px;
+    border: 2px solid #7e7e7e;
+    border-radius: 14px;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  .toggle-switch__circle {
+    width: 24px;
+    height: 24px;
+    background-color: #000000;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 1; /* ⬅ BELOW the text */
+    transition: transform 0.3s ease;
+  }
+
+  .toggle-switch__circle.right {
+    transform: translateX(28px);
+  }
+
+  .toggle-switch__circle.left {
+    transform: translateX(0);
+  }
+
+  .toggle-switch__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* ⬅ ABOVE the circle */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0;
+    pointer-events: none;
+  }
+
+  .toggle-switch__text_F,
+  .toggle-switch__text_C {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    padding: 0 2px;
+  }
+  .toggle-switch__text_F.active {
+    color: #ffffff;              /* Make F white */
+    background-color: #000000;   /* Black background behind F */
+    border-radius: 14px;
+  }
+
+  .toggle-switch__text_C.active {
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 14px;
+  }
+
+  .toggle-switch__text_F:not(.active),
+  .toggle-switch__text_C:not(.active) {
+    background-color: transparent;
+  }

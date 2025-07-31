@@ -8,6 +8,17 @@
   z-index: 1000;
 }
 
+.modal__header {
+  display: flex;
+gap: 298.32px;
+  align-items: center;
+}
+.modal__delete-button {
+  color: #ff4d00;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .modal__content {
   padding: 0; /* ✅ removes any default spacing */
   width: 498px;

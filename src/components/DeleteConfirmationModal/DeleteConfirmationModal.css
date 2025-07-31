@@ -1,0 +1,107 @@
+.confirm-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3); /* Slight overlay for focus */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.confirm-modal__content {
+  background: white;
+  border-radius: 8px;
+
+  width: 670px;
+  height: 280px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.confirm-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+
+.confirm-modal__text {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-style: normal; /* 'Bold' is covered by font-weight */
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+
+  padding-top: 60px;
+  padding-bottom: 40px;
+  width: 367px;
+  height: 48px;
+  margin: 0 auto 30px; /* centers and gives bottom margin */
+  opacity: 1;
+}
+
+.confirm-modal__actions {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 20px;              /* space between buttons */
+}
+.confirm-modal__delete {
+  background: none;
+  color: #ff4d00;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.confirm-modal__cancel {
+  background: none;
+  font-size: 16px;
+  color: #000;
+  border: none;
+  cursor: pointer;
+}
+.modal__delete {
+  width: 138px;
+  height: 24px;
+  background: #FF4D00;
+  color: white;
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-weight: 700;
+  font-style: normal; /* or 'bold' if your font system uses it that way */
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.modal__cancel {
+  width: 61px;
+  height: 24px;
+  background: #000000;
+  color: white;
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-weight: 700;
+  font-style: normal; /* or 'bold' depending on your setup */
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+

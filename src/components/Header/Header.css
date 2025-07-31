@@ -72,3 +72,10 @@
   border-radius: 50%;
   object-fit: cover;
 }
+.header__profile-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none; /* remove underline */
+  color: inherit; /* inherit text color */
+}

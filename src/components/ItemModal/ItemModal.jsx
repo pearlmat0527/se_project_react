@@ -1,7 +1,7 @@
 import "./ItemModal.css";
 import CloseIcon from "../../assets/Modal_Preview_close.svg"; // adjust path if needed
 
-function ItemModal({ activeModal, card, onClose }) {
+function ItemModal({ activeModal, card, onClose, onDeleteClick }) {
   if (activeModal !== "preview" || !card) return null;
 
   return (
@@ -15,10 +15,18 @@ function ItemModal({ activeModal, card, onClose }) {
           <img src={CloseIcon} alt="Close" className="modal__close-icon" />
         </button>
 
-        <img src={card.link} alt={card.name} className="modal__image" />
-
+        <img
+          src={card.image || card.imageUrl}
+          alt={card.name}
+          className="modal__image"
+        />
         <div className="modal__info">
-          <h2 className="modal__caption">{card.name}</h2>
+          <div className="modal__header">
+            <h2 className="modal__caption">{card.name}</h2>
+            <h2 className="modal__delete-button" onClick={onDeleteClick}>
+              Delete item
+            </h2>
+          </div>
           <p className="modal__weather">Weather: {card.weather}</p>
         </div>
       </div>
