@@ -1,4 +1,4 @@
-import "./ClothSection.css";
+import "./ClothesSection.css";
 
 function ClothSection({ temperatureType, onCardClick, clothingItems }) {
 const filteredItems = (clothingItems || []).filter(

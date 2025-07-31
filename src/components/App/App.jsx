@@ -6,6 +6,7 @@
   import Footer from "../Footer/Footer";
   import Profile from "../Profile/Profile";
   import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
+import AddItemModal from "../AddItemModal/AddItemModal";
 
   import { useEffect, useState } from "react";
   import { Routes, Route } from "react-router-dom";
@@ -198,73 +199,6 @@
             <Footer />
           </div>
 
-          <ModalWithForm
-            title="New Garment"
-            buttonText="Add garment"
-            onClose={handleCloseModal}
-            isOpen={activeModal === "Add garment"}
-            onSubmit={handleAddItem}
-          >
-            <label className="form-modal__label">
-              Name
-              <input
-                type="text"
-                className="form-modal__input"
-                name="name"
-                value={formValues.name}
-                onChange={handleFormChange}
-              />
-            </label>
-
-            <label className="form-modal__label">
-              Image
-              <input
-                type="url"
-                className="form-modal__input"
-                name="imageUrl"
-                value={formValues.imageUrl}
-                onChange={handleFormChange}
-              />
-              {imageError && (
-                <span className="form-modal__error">{imageError}</span>
-              )}
-            </label>
-
-            <fieldset className="form-modal__fieldset">
-              <legend>Select the weather type:</legend>
-              <label>
-                <input
-                  type="radio"
-                  name="weather"
-                  value="hot"
-                  checked={formValues.weather === "hot"}
-                  onChange={handleFormChange}
-                />{" "}
-                Hot
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="weather"
-                  value="warm"
-                  checked={formValues.weather === "warm"}
-                  onChange={handleFormChange}
-                />{" "}
-                Warm
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="weather"
-                  value="cold"
-                  checked={formValues.weather === "cold"}
-                  onChange={handleFormChange}
-                />{" "}
-                Cold
-              </label>
-            </fieldset>
-          </ModalWithForm>
-
           <ItemModal
             activeModal={activeModal}
             card={selectedCard}
@@ -279,6 +213,14 @@
             />
           )}
         </div>
+        <AddItemModal
+          isOpen={activeModal === "Add garment"}
+          onCloseModal={handleCloseModal}
+          onSubmit={handleAddItem}
+          formValues={formValues}
+          handleFormChange={handleFormChange}
+          imageError={imageError}
+        />
       </CurrentTempUnitProvider>
     );
   }

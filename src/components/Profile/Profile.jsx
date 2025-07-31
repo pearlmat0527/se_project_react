@@ -1,5 +1,5 @@
 import Sidebar from "../Sidebar/Sidebar";
-import ClothSection from "../ClothSection/ClothSection.jsx";
+import ClothesSection from "../ClothesSection/ClothesSection.jsx";
 
 function Profile({ temperatureType, onCardClick, clothingItems }) {
   return (
@@ -8,7 +8,7 @@ function Profile({ temperatureType, onCardClick, clothingItems }) {
         <Sidebar />
       </div>
       <section className="profile__clothing-items">
-        <ClothSection
+        <ClothesSection
           temperatureType={temperatureType}
           onCardClick={onCardClick}
           clothingItems={clothingItems} // ✅ Pass it here
