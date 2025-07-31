@@ -1,9 +1,9 @@
 import "./ClothesSection.css";
 
-function ClothSection({ temperatureType, onCardClick, clothingItems }) {
-const filteredItems = (clothingItems || []).filter(
-  (item) => item.weather === temperatureType
-);
+function ClothesSection({ temperatureType, onCardClick, clothingItems }) {
+  const filteredItems = (clothingItems || []).filter(
+    (item) => item.weather === temperatureType
+  );
 
   return (
     <section className="clothing-section">
@@ -34,4 +34,4 @@ const filteredItems = (clothingItems || []).filter(
   );
 }
 
-export default ClothSection;
+export default ClothesSection;
