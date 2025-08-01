@@ -1,19 +1,18 @@
-  import "./App.css";
-  import Header from "../Header/Header";
-  import Main from "../Main/Main";
-  import ModalWithForm from "../ModalWithForm/ModalWithForm";
-  import ItemModal from "../ItemModal/ItemModal";
-  import Footer from "../Footer/Footer";
-  import Profile from "../Profile/Profile";
-  import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
+import "./App.css";
+import Header from "../Header/Header";
+import Main from "../Main/Main";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import ItemModal from "../ItemModal/ItemModal";
+import Footer from "../Footer/Footer";
+import Profile from "../Profile/Profile";
+import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 import AddItemModal from "../AddItemModal/AddItemModal";
-
-  import { useEffect, useState } from "react";
-  import { Routes, Route } from "react-router-dom";
-  import { apiKey, DEFAULT_COORDINATES } from "../../utils/constants";
-  import { getWeather, filterWeatherData } from "../../utils/WeatherApi";
-  import { CurrentTempUnitProvider } from "../contexts/CurrentTempUnitContext";
-  import {
+import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { apiKey, DEFAULT_COORDINATES } from "../../utils/constants";
+import { getWeather, filterWeatherData } from "../../utils/WeatherApi";
+import { CurrentTempUnitProvider } from "../contexts/CurrentTempUnitContext";
+import {
     getClothingItems,
     addClothingItem,
     deleteClothingItem,
@@ -84,16 +83,14 @@ import AddItemModal from "../AddItemModal/AddItemModal";
     };
   const handleConfirmDelete = async () => {
     if (!selectedCard?.id) {
-      console.warn("[Delete] No item selected.");
+
       return;
     }
 
     const itemId = Number(selectedCard.id);
-    console.log(`[Delete] Attempting to delete item with ID: ${itemId}`);
 
     try {
       await deleteClothingItem(itemId);
-      console.log("[Delete] DELETE request sent.");
     } catch (err) {
       console.warn(
         "[Delete] DELETE failed — item might already be deleted:",
@@ -102,10 +99,8 @@ import AddItemModal from "../AddItemModal/AddItemModal";
     }
 
     try {
-      console.log("[Delete] Re-fetching items from server...");
       const updatedItems = await getClothingItems();
       setClothingItems(updatedItems);
-      console.log("[Delete] Clothing items updated:", updatedItems);
     } catch (err) {
       console.error("[Delete] Failed to fetch updated items:", err.message);
     }

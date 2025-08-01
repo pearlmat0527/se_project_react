@@ -1,6 +1,11 @@
 import "./ClothesSection.css";
 
-function ClothesSection({ temperatureType, onCardClick, clothingItems }) {
+function ClothesSection({
+  temperatureType,
+  onCardClick,
+  clothingItems,
+  onAddClick,
+}) {
   const filteredItems = (clothingItems || []).filter(
     (item) => item.weather === temperatureType
   );
@@ -9,7 +14,9 @@ function ClothesSection({ temperatureType, onCardClick, clothingItems }) {
     <section className="clothing-section">
       <div className="clothing-section__header">
         <p className="clothing-section__title">Your items</p>
-        <button className="clothing-section__add-button">+ Add new</button>
+        <button className="clothing-section__add-button" onClick={onAddClick}>
+          + Add new
+        </button>
       </div>
 
       <ul className="clothing-section__grid">
@@ -17,7 +24,7 @@ function ClothesSection({ temperatureType, onCardClick, clothingItems }) {
           <li
             key={item.id || item._id}
             className="clothing-section__grid-item"
-            onClick={() => onCardClick(item)} // ✅ Now this will work
+            onClick={() => onCardClick(item)}
           >
             <div className="clothing-section__item">
               <p className="clothing-section__item-name">{item.name}</p>

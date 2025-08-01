@@ -1,7 +1,21 @@
 import "./ModalWithForm.css";
 import CloseIcon from "../../assets/close_icon.svg"; // adjust the path as needed
 
-function ModalWithForm({ title, buttonText, children, onClose, isOpen }) {
+function ModalWithForm({
+  title,
+  buttonText,
+  children,
+  onClose,
+  isOpen,
+  onSubmit,
+}) {
+  const handleSubmit = (e) => {
+    e.preventDefault(); // prevent page reload
+    if (onSubmit) {
+      onSubmit(e); // trigger the passed-in submit handler
+    }
+  };
+
   return (
     <div className={`form-modal ${isOpen ? "form-modal--opened" : ""}`}>
       <div className="form-modal__content">
@@ -16,7 +30,7 @@ function ModalWithForm({ title, buttonText, children, onClose, isOpen }) {
           </button>
         </div>
 
-        <form className="form-modal__form">
+        <form className="form-modal__form" onSubmit={handleSubmit}>
           {children}
           <button type="submit" className="form-modal__submit-button">
             {buttonText}
