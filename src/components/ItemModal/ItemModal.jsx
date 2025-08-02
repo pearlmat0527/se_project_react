@@ -23,7 +23,10 @@ function ItemModal({ activeModal, card, onClose, onDeleteClick }) {
         <div className="modal__info">
           <div className="modal__header">
             <h2 className="modal__caption">{card.name}</h2>
-            <h2 className="modal__delete-button" onClick={onDeleteClick}>
+            <h2
+              className="modal__delete-button"
+              onClick={() => onDeleteClick(card)} // ✅ Pass the actual card being shown
+            >
               Delete item
             </h2>
           </div>

@@ -1,15 +1,12 @@
 import "./ClothesSection.css";
 
 function ClothesSection({
-  temperatureType,
   onCardClick,
   clothingItems,
   onAddClick,
+  onDeleteClick,
+  
 }) {
-  const filteredItems = (clothingItems || []).filter(
-    (item) => item.weather === temperatureType
-  );
-
   return (
     <section className="clothing-section">
       <div className="clothing-section__header">
@@ -20,9 +17,9 @@ function ClothesSection({
       </div>
 
       <ul className="clothing-section__grid">
-        {filteredItems.map((item) => (
+        {(clothingItems || []).map((item) => (
           <li
-            key={item.id || item._id}
+            key={item._id || item.id}
             className="clothing-section__grid-item"
             onClick={() => onCardClick(item)}
           >
