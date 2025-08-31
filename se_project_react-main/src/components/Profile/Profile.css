@@ -1,0 +1,35 @@
+/* Two-column profile layout */
+.profile {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr); /* sidebar | content */
+  column-gap: 24px;
+  align-items: start;
+}
+
+/* small visual nudge so sidebar aligns with content */
+.profile__sidebar {
+  padding-top: 8px;
+}
+
+/* keep right column from centering anything */
+.profile__clothing-items {
+  min-width: 0;
+  text-align: left;            /* force left alignment in this column */
+}
+
+/* 🔒 Scoped overrides — ONLY on the profile page
+   These don't change your ClothingSection files, just how they render here */
+.profile__clothing-items .clothing-section {
+  margin: 0;                   /* cancel any margin-left etc. */
+  padding: 0;                  /* remove extra horizontal padding */
+}
+
+.profile__clothing-items .clothing-section__header {
+  margin: 0 0 16px 0;          /* tidy gap below header */
+  justify-content: flex-start; /* keep header at the left edge */
+}
+
+.profile__clothing-items .clothing-section__empty {
+  margin-top: 8px;
+  text-align: left;
+}

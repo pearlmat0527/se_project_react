@@ -1,0 +1,138 @@
+/* ========= Register Modal (BEM) ========= */
+
+/* Overlay modifier: only affects the Sign up modal */
+.form-modal--register {
+  background: rgba(17, 24, 39, 0.3); /* black @ 30% */
+}
+
+/* Card modifier: size/look for the Sign up modal only */
+.form-modal__content--register {
+  width: min(420px, 92vw);
+  max-width: 480px;
+  height: auto;                    /* override any fixed height */
+  max-height: min(80vh, 640px);    /* scroll if too tall */
+  overflow: auto;
+
+  background: #fff;
+  border: 0;                       /* remove default border */
+  border-radius: 16px;             /* per Figma */
+  padding: 16px;                   /* compact inner padding */
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+/* Fine-tune header inside this variant */
+.form-modal__content--register .form-modal__header {
+  margin-bottom: 8px;
+}
+.form-modal__content--register .form-modal__title {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #111827;
+}
+.form-modal__content--register .form-modal__close {
+  top: 8px;
+  right: 8px;
+}
+
+/* Submit button inside the Register variant (BEM mix) */
+.form-modal__content--register .form-modal__submit-button {
+  margin-top: 12px;
+  border-radius: 8px;
+  background: #111827;
+  color: #fff;
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: opacity .15s ease, transform .02s ease;
+}
+.form-modal__content--register .form-modal__submit-button:active {
+  transform: translateY(0.5px);
+}
+.form-modal__content--register .form-modal__submit-button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========= Block: register-modal ========= */
+
+.register-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Error message */
+.register-modal__error {
+  margin: 2px 0 6px;
+  color: #ef4444; /* red-500 */
+  font-size: 12px;
+}
+
+/* Field stack */
+.register-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Label */
+.register-modal__label {
+  font-size: 12px;
+  color: #475569; /* slate-600 */
+}
+
+/* Input: single-line with bottom border */
+.register-modal__input {
+  border: none;
+  border-bottom: 1px solid #cbd5e1; /* slate-300 */
+  padding: 10px 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #111827; /* near-black */
+  background: transparent;
+  outline: none;
+}
+.register-modal__input::placeholder {
+  color: #94a3b8; /* slate-400 */
+}
+.register-modal__input:focus {
+  border-bottom-color: #111827;
+}
+.register-modal__input--invalid {
+  border-bottom-color: #ef4444;
+}
+
+/* Actions (e.g., “or Log in”) */
+.register-modal__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+.register-modal__link {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #111827;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.register-modal__link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .form-modal__content--register {
+    padding: 14px;
+    border-radius: 14px;
+  }
+  .register-modal {
+    gap: 12px;
+  }
+}

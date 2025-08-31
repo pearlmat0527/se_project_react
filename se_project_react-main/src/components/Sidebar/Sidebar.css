@@ -1,0 +1,60 @@
+/* Sidebar.css — replace your rules with these */
+
+/* layout */
+.sidebar {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;              /* space between avatar and text column */
+  /* no absolute positioning, no fixed width/height */
+}
+
+/* avatar */
+.sidebar__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* name */
+.sidebar__username {
+  margin: 0 0 6px 0;      /* put space below the name */
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  line-height: 1.2;
+}
+
+/* stack the two buttons vertically */
+.sidebar__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* text-link buttons */
+.sidebar__link {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  color: #111;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.sidebar__link:hover,
+.sidebar__link:focus {
+  text-decoration: underline;
+}
+
+.sidebar__link--danger {
+  color: #b02a2a;
+}

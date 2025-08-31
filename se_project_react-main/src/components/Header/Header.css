@@ -1,0 +1,133 @@
+/* Wrapper to center the header in a dark background */
+.header-wrapper {
+  padding: 32px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main header box */
+.header {
+  width: 1360px;
+  height: 40px;
+  background-color: #f3f3f3;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-sizing: border-box;
+  font-family: "Cabinet Grotesk", sans-serif;
+}
+
+/* Left container: logo + date/location */
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__logo {
+  width: 89px;
+  height: auto;
+}
+
+/* Date and Location */
+.header__date_location {
+  font-size: 16px;
+  color: #111;
+  font-weight: 500;
+}
+
+/* Right container: button + user + avatar */
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__add-close-btn {
+  background: none;
+  border: none;
+  color: #111;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header__add-close-btn:hover {
+  text-decoration: underline;
+}
+
+.header__username {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+}
+
+.header__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.header__avatar--placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e6e8eb;
+  color: #334155;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+.header__profile-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none; /* remove underline */
+  color: inherit; /* inherit text color */
+}
+
+/* space the links and kill default <a> underline/blue */
+.header__auth {
+  display: flex;          /* was inline or block -> make it flex */
+  align-items: center;
+  gap: 16px;              /* this gives “Sign Up   Log In” spacing */
+  margin-left: 12px;      /* optional: nudge away from toggle */
+}
+
+/* base link reset for text-link variant */
+.header__auth-link_type_text {
+  all: unset;             /* wipe UA <a> styles */
+  display: inline-block;
+  cursor: pointer;
+  color: #111827;
+  font-size: 14px;
+  line-height: 1.2;
+  opacity: 0.9;
+}
+
+/* ensure states don’t re-underline/recolor */
+.header__auth-link_type_text:link,
+.header__auth-link_type_text:visited,
+.header__auth-link_type_text:active {
+  color: #111827;
+  text-decoration: none;
+}
+
+/* hover/focus behavior (Figma-like) */
+.header__auth-link_type_text:hover,
+.header__auth-link_type_text:focus-visible {
+  text-decoration: underline;
+  opacity: 1;
+  outline: none;
+}
+
+/* keep right side neat too */
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}

@@ -1,0 +1,73 @@
+/* Card */
+.item-card {
+  width: 325px;
+  height: 328px;
+  border: 1px solid #0000004d;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  background-color: #e9e9e9;
+}
+
+/* Top row that sits over the image */
+/* Top row centered horizontally over the image */
+.item-card__top {
+  position: absolute;
+  top: 12px;
+
+  /* make the row span the card so we can center its contents */
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;   /* ⬅️ centers name + heart together */
+  align-items: center;
+  gap: 4.5px;                /* exact spacing */
+  z-index: 2;                /* keep above image */
+}
+
+/* Name pill (no absolute here!) */
+.item-card__name {
+  margin: 0;
+  padding: 2px 12px;
+  height: 24px;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Like button (inside the top bar) */
+.item-card__like {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.item-card__like-icon {
+  width: 18px;
+  height: 15px;
+}
+
+.item-card__like--active .item-card__like-icon {
+  filter: saturate(1.5) brightness(0.9);
+}
+
+/* Image */
+.item-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
