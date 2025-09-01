@@ -10,13 +10,15 @@
 
 .modal__header {
   display: flex;
-gap: 298.32px;
+  gap: 298.32px;
   align-items: center;
 }
 .modal__delete-button {
   color: #ff4d00;
   font-size: 16px;
   font-weight: bold;
+  background: none;
+  border: none;
 }
 
 .modal__content {

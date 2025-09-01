@@ -1,6 +1,6 @@
 /* Block: login-modal */
 .login-modal {
-  /* The outer modal panel is provided by ModalWithForm; we just tweak spacing */
+  
 }
 
 .login-modal__content {
@@ -34,16 +34,31 @@ height: 304px;
   font-weight: 500;
   color: #000;
 }
-
+ 
+/* your base styles */
 .login-modal__input {
-  height: 36px;
-  padding: 0 12px;
-  border: 1px solid #dcdcdc;
-  border-radius: 4px;
-  background: #fff;
-  outline: none;
+  border: 0;
+  border-bottom: 1px solid #cbd5e1;
+  padding: 10px 0;
   font-size: 14px;
+  line-height: 1.4;
+  color: #111827;
+  background: transparent;
+  outline: none;
+  appearance: none;
 }
+
+
+/* Optional: clearer focus state without layout shift *
+.login-modal__input:focus {
+  border-bottom-color: #111;
+}
+
+/* Optional: error state */
+.login-modal__input--error {
+  border-bottom-color: #b02a2a;
+}
+
 
 .login-modal__input:focus {
   border-color: #111;
@@ -78,7 +93,7 @@ height: 304px;
   border: 0;
   padding: 0;
   font-size: 12px;
-  color: #6b6b6b;
+  color: red;
   cursor: pointer;
   text-decoration: none;
 }
