@@ -16,6 +16,7 @@ import { Routes, Route } from "react-router-dom";
 import { apiKey, DEFAULT_COORDINATES } from "../../utils/constants";
 import { getWeather, filterWeatherData } from "../../utils/WeatherApi";
 import { CurrentTempUnitProvider } from "../contexts/CurrentTempUnitContext";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
 import {
   getClothingItems,
@@ -25,8 +26,6 @@ import {
   addCardLike, // ← NEW
   removeCardLike, // ← NEW
 } from "../../utils/api";
-
-import CurrentUserContext from "../contexts/CurrentUserContext";
 
 // 🔐 auth client
 import { signup, signin, getMe } from "../../utils/auth";
@@ -111,6 +110,7 @@ function App() {
       setProfileSaving(false);
     }
   };
+
   const handleCardLike = async ({ id, isLiked }) => {
     const token = localStorage.getItem("jwt");
     if (!token) return; // guests can't like
@@ -129,6 +129,7 @@ function App() {
       console.error("[Like] failed:", err);
     }
   };
+
   // ===== Validate add-item form =====
   useEffect(() => {
     const isValid =
@@ -335,14 +336,12 @@ function App() {
                     <Profile
                       temperatureType={weatherData.type}
                       onCardClick={handleCardClick}
-                      clothingItems={clothingItems.filter(
-                        (item) => item.weather === weatherData.type
-                      )}
+                      clothingItems={clothingItems}
                       onAddClick={handleOpenModal}
                       onDeleteClick={handleDeleteClick}
                       onOpenEditProfile={() => setEditProfileOpen(true)}
-                      onLogout={handleLogout} 
-                      onCardLike={handleCardLike} 
+                      onLogout={handleLogout}
+                      onCardLike={handleCardLike}
                     />
                   </ProtectedRoute>
                 }
