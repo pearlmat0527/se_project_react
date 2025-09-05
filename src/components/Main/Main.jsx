@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CurrentTempUnitContext } from "../contexts/CurrentTempUnitContext"; 
+import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext"; 
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
 import "./Main.css";

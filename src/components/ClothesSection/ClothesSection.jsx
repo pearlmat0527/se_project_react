@@ -1,6 +1,6 @@
 import { useContext, useMemo } from "react";
 import "./ClothesSection.css";
-import CurrentUserContext from "../contexts/CurrentUserContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function ClothesSection({
   onCardClick,

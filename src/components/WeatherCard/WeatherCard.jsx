@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CurrentTempUnitContext } from "../contexts/CurrentTempUnitContext"; // ✅ Fix the import path as needed
+import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext"; // ✅ Fix the import path as needed
 import sunny_morning from "../../assets/Sunny_Morning.png";
 import "./WeatherCard.css";
 

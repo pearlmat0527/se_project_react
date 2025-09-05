@@ -15,8 +15,8 @@ import { Routes, Route } from "react-router-dom";
 
 import { apiKey, DEFAULT_COORDINATES } from "../../utils/constants";
 import { getWeather, filterWeatherData } from "../../utils/WeatherApi";
-import { CurrentTempUnitProvider } from "../contexts/CurrentTempUnitContext";
-import CurrentUserContext from "../contexts/CurrentUserContext";
+import { CurrentTempUnitProvider } from "../../contexts/CurrentTempUnitContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 import {
   getClothingItems,

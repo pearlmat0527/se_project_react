@@ -1,7 +1,7 @@
 // src/components/EditProfileModal/EditProfileModal.jsx
 import { useContext, useEffect, useMemo, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import CurrentUserContext from "../contexts/CurrentUserContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import "./EditProfileModal.css";
 
 export default function EditProfileModal({

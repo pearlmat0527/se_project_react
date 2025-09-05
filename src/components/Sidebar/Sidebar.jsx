@@ -1,6 +1,6 @@
 // src/components/Sidebar/Sidebar.jsx
 import { useContext, useMemo, useState } from "react";
-import CurrentUserContext from "../contexts/CurrentUserContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import "./Sidebar.css";
 
 function Sidebar({ onEditProfile, onLogout }) {
