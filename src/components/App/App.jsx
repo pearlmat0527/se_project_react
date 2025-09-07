@@ -229,7 +229,7 @@ function App() {
 
     try {
       const newItem = await addClothingItem(formValues);
-      setClothingItems((prev) => [...prev, newItem]);
+      setClothingItems((prev) => [newItem, ...prev]);
       handleCloseModal();
     } catch (err) {
       console.error("Error adding item:", err);

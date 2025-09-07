@@ -1,13 +1,20 @@
-import { useContext } from "react";
-import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext"; 
+import { useContext, useMemo } from "react";
+import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
 import "./Main.css";
 
-function Main({ weatherData, onCardClick, clothingItems, onCardLike }) {
+function Main({ weatherData, onCardClick, clothingItems = [], onCardLike }) {
   const { currentTemperatureUnit } = useContext(CurrentTempUnitContext);
+  const temperature = weatherData?.temp?.[currentTemperatureUnit] ?? "–";
 
-  const temperature = weatherData?.temp?.[currentTemperatureUnit] || "–";
+  const filteredItems = useMemo(
+    () =>
+      clothingItems.filter(
+        (item) => !weatherData?.type || item.weather === weatherData.type
+      ),
+    [clothingItems, weatherData?.type]
+  );
 
   return (
     <section className="cards">
@@ -17,14 +24,12 @@ function Main({ weatherData, onCardClick, clothingItems, onCardLike }) {
         Today is {temperature}°{currentTemperatureUnit} / You may want to wear:
       </p>
 
-      <ul className="cards__list">
-        {clothingItems
-          .filter((item) => {
-            if (!weatherData?.type) return true;
-            return item.weather === weatherData.type;
-          })
-          .map((item) => (
-            <li key={item.id} className="cards__list-item">
+      {filteredItems.length === 0 ? (
+        <p className="cards__empty">No items match the current weather.</p>
+      ) : (
+        <ul className="cards__list">
+          {filteredItems.map((item) => (
+            <li key={item._id || item.id} className="cards__list-item">
               <ItemCard
                 item={item}
                 onClick={onCardClick}
@@ -32,7 +37,8 @@ function Main({ weatherData, onCardClick, clothingItems, onCardLike }) {
               />
             </li>
           ))}
-      </ul>
+        </ul>
+      )}
     </section>
   );
 }

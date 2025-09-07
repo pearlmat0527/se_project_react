@@ -42,7 +42,7 @@ function ModalWithForm({
           >
             <img
               src={CloseIcon}
-              alt=""
+              alt="Close dialog button"
               className="form-modal__close-icon"
               aria-hidden="true"
             />

@@ -6,11 +6,6 @@
   align-items: start;
 }
 
-/* small visual nudge so sidebar aligns with content */
-.profile__sidebar {
-  padding-top: 8px;
-}
-
 /* keep right column from centering anything */
 .profile__clothing-items {
   min-width: 0;

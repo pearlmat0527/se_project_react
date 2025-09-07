@@ -1,17 +1,17 @@
 import { useContext, useMemo } from "react";
-import "./ClothesSection.css";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
+import ItemCard from "../ItemCard/ItemCard";
+import "./ClothesSection.css";
 
-function ClothesSection({
+export default function ClothesSection({
   onCardClick,
   clothingItems = [],
   onAddClick,
-  onDeleteClick, // (kept for parity; used by cards if needed)
-  
+  onCardLike, // ← make sure this is here
 }) {
   const currentUser = useContext(CurrentUserContext);
 
-  // Only show items added by the current user
+  // show only current user's items (keep your logic)
   const myItems = useMemo(() => {
     if (!currentUser?._id) return [];
     return clothingItems.filter((item) => {
@@ -38,21 +38,14 @@ function ClothesSection({
         <ul className="clothing-section__grid">
           {myItems.map((item) => (
             <li
-              key={item._id || item.id}
+              key={item._id || item.id} 
               className="clothing-section__grid-item"
-              onClick={() => onCardClick(item)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === "Enter" && onCardClick(item)}
             >
-              <div className="clothing-section__item">
-                <p className="clothing-section__item-name">{item.name}</p>
-                <img
-                  src={item.imageUrl || item.image}
-                  alt={item.name}
-                  className="clothing-section__item-image"
-                />
-              </div>
+              <ItemCard
+                item={item}
+                onClick={onCardClick}
+                onCardLike={onCardLike} // ← this enables the heart
+              />
             </li>
           ))}
         </ul>
@@ -60,5 +53,3 @@ function ClothesSection({
     </section>
   );
 }
-
-export default ClothesSection;

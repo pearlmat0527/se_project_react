@@ -52,13 +52,14 @@
 .clothing-section__grid-item {
   width: 325px;
   height: 328px;
-  background-color: #f3f3f3;
-  border: 2px solid #e7e7e7;
-  border-radius: 20px;
-  text-align: center;
-  padding: 0; /* Let image fill the full height */
-  box-sizing: border-box;
-  overflow: hidden;
+  background-color: #e9e9e9;
+
+  /* UPDATED to match Figma */
+  border: 1px solid rgba(0, 0, 0, 0.3); /* #000 at 30% */
+  border-radius: 19px;                   /* Figma shows ~19px */
+  overflow: hidden;                      /* keeps image corners clipped */
+
+  position: relative;
 }
 
 .clothing-section__item {

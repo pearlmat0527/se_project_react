@@ -1,60 +1,80 @@
-/* Sidebar.css — replace your rules with these */
-
-/* layout */
+/* Sidebar container */
 .sidebar {
+  /* Controls for alignment math */
+  --avatar-size: 56px;
+  --identity-gap: 12px;
+  --indent: calc(var(--avatar-size) + var(--identity-gap));
+
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 12px;              /* space between avatar and text column */
-  /* no absolute positioning, no fixed width/height */
 }
 
-/* avatar */
+/* Row: avatar + name */
+.sidebar__identity {
+  display: flex;
+  align-items: center;
+  gap: var(--identity-gap);
+}
+
+/* Avatar */
 .sidebar__avatar {
-  width: 56px;
-  height: 56px;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
   border-radius: 50%;
   object-fit: cover;
-  flex-shrink: 0;
   display: block;
+  flex-shrink: 0;
 }
 
-/* name */
+.sidebar__avatar--placeholder {
+  display: grid;
+  place-items: center;
+  background: #e9e9e9;
+  color: #111;
+  font-weight: 700;
+  border: 1px solid rgba(0, 0, 0, 0.3); /* #0000004D */
+}
+
+/* Name */
 .sidebar__username {
-  margin: 0 0 6px 0;      /* put space below the name */
-  font-size: 16px;
-  font-weight: 600;
+  margin: 0; /* no big bottom gap */
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
   color: #000;
-  line-height: 1.2;
 }
 
-/* stack the two buttons vertically */
 .sidebar__actions {
+  margin-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 6px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 700px;
+  font-style: Bold;
+  font-size: 20px;
+
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 
-/* text-link buttons */
+/* Link-style buttons */
 .sidebar__link {
   appearance: none;
   background: none;
   border: 0;
   padding: 0;
   margin: 0;
-  display: inline-block;
-  cursor: pointer;
   font: inherit;
   font-size: 14px;
   color: #111;
   text-align: left;
-  line-height: 1.2;
+  cursor: pointer;
 }
 
 .sidebar__link:hover,
-.sidebar__link:focus {
+.sidebar__link:focus-visible {
   text-decoration: underline;
-}
-
-.sidebar__link--danger {
-  color: #b02a2a;
+  outline: none;
 }

@@ -1,57 +1,85 @@
 /* src/components/EditProfileModal/EditProfileModal.css */
 
-.edit-profile-modal { /* wrapper applied to ModalWithForm root */
+/* Overlay — this selects only the edit-profile instance */
+.edit-profile-modal {
+  /* backdrop ONLY for this modal */
+  background: rgba(0, 0, 0, 0.35);
 }
 
-.edit-profile-modal__content { /* inner container area */
-  display: grid;
-  gap: 12px;
+/* panel for Edit Profile only */
+.edit-profile-modal__content {
+  width: 496px;
+  height: 304px;
+  padding: 24px 28px;
+  gap: 14px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.edit-profile-modal__error {
-  color: #d33;
-  font-size: 0.9rem;
-  margin: 0 0 4px;
+/* If you want to tweak the shared header/title/close, wrap with your class */
+.edit-profile-modal .form-modal__header {
+  margin-bottom: 4px;
+}
+.edit-profile-modal .form-modal__title {
+  font-size: 20px;
+  font-weight: 700;
+}
+.edit-profile-modal .form-modal__close {
+  top: 12px;
+  right: 12px;
 }
 
+/* Fields — unique classes, won’t affect other modals */
 .edit-profile-modal__field {
-  display: grid;
-  gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-
 .edit-profile-modal__label {
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
 }
 
 .edit-profile-modal__input {
-  width: 100%;
-  padding: 10px 12px;
+  height: 36px;
+  padding: 0 12px;
   border: 1px solid #dcdcdc;
-  border-radius: 8px;
-  font-size: 0.95rem;
-}
-
-.edit-profile-modal__input:focus {
+  border-radius: 4px;
+  background: #fff;
+  font-size: 14px;
   outline: none;
-  border-color: #888;
+}
+.edit-profile-modal__input:focus {
+  border-color: #111;
 }
 
-.edit-profile-modal__actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  margin-top: 6px;
+.edit-profile-modal__error {
+  margin: 0 0 4px;
+  font-size: 12px;
+  color: #b02a2a;
 }
 
+/* Submit — unique class from submitButtonClassName prop */
 .edit-profile-modal__submit {
-  padding: 10px 14px;
-  border-radius: 8px;
-  border: none;
-  font-weight: 600;
+  height: 36px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 4px;
+  background: #111;
+  color: #fff;
+  font-weight: 700px;
   cursor: pointer;
-}
+  align-self: flex-start;
+  margin-top: 6px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 
+  font-style: Bold;
+  font-size: 16px;
+
+  line-height: 20px;
+}
 .edit-profile-modal__submit:disabled {
   opacity: 0.6;
   cursor: not-allowed;

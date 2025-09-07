@@ -1,12 +1,15 @@
 /* Card */
 .item-card {
-  width: 325px;
-  height: 328px;
-  border: 1px solid #0000004d;
-  border-radius: 5px;
-  overflow: hidden;
-  position: relative;
+  width: 323px;
+  height: 326px;
   background-color: #e9e9e9;
+
+  /* UPDATED to match Figma */
+  border: 1px solid rgba(0, 0, 0, 0.3); /* #000 at 30% */
+  border-radius: 19px;                   /* Figma shows ~19px */
+  overflow: hidden;                      /* keeps image corners clipped */
+
+  position: relative;
 }
 
 /* Top row that sits over the image */

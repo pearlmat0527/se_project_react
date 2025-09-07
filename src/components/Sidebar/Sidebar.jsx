@@ -15,43 +15,44 @@ function Sidebar({ onEditProfile, onLogout }) {
   }, [currentUser]);
 
   return (
-    <div className="sidebar">
-      {avatar && imgOk ? (
-        <img
-          className="sidebar__avatar"
-          src={avatar}
-          alt={`${name} avatar`}
-          onError={() => setImgOk(false)}
-        />
-      ) : (
-        <div className="sidebar__avatar sidebar__avatar--placeholder">
-          {initials}
-        </div>
-      )}
+    <aside className="sidebar" aria-label="Profile sidebar">
+      {/* NEW: identity row (avatar + name) */}
+      <div className="sidebar__identity">
+        {avatar && imgOk ? (
+          <img
+            className="sidebar__avatar"
+            src={avatar}
+            alt={`${name} — profile avatar`}
+            onError={() => setImgOk(false)}
+          />
+        ) : (
+          <div
+            className="sidebar__avatar sidebar__avatar--placeholder"
+            aria-hidden="true"
+          >
+            {initials}
+          </div>
+        )}
 
-      <div className="sidebar__info">
         <p className="sidebar__username" title={name}>
           {name}
         </p>
-
-        <div className="sidebar__actions">
-          <button
-            type="button"
-            className="sidebar__link"
-            onClick={onEditProfile}
-          >
-            Change profile data
-          </button>
-          <button
-            type="button"
-            className="sidebar__link sidebar__link--danger"
-            onClick={onLogout}
-          >
-            Log out
-          </button>
-        </div>
       </div>
-    </div>
+
+      {/* Actions sit UNDER the name, aligned with it */}
+      <nav className="sidebar__actions" aria-label="Profile actions">
+        <button type="button" className="sidebar__link" onClick={onEditProfile}>
+          Change profile data
+        </button>
+        <button
+          type="button"
+          className="sidebar__link sidebar__link--danger"
+          onClick={onLogout}
+        >
+          Log out
+        </button>
+      </nav>
+    </aside>
   );
 }
 
