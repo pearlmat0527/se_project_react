@@ -11,7 +11,7 @@ function DeleteConfirmationModal({ onCancel, onConfirm }) {
           onClick={onCancel}
           aria-label="Close delete confirmation"
         >
-          <img src={closeIcon} alt="Close" />
+          <img src={closeIcon} alt="Close_icon" />
         </button>
 
         <p className="confirm-modal__text">

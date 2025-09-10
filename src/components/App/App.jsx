@@ -390,6 +390,10 @@ function App() {
             isOpen={isLoginOpen}
             onClose={() => setLoginOpen(false)}
             onLogin={handleLogin}
+            onSwitchToRegister={() => {
+              setLoginOpen(false);
+              setRegisterOpen(true);
+            }}
           />
         )}
       </CurrentTempUnitProvider>

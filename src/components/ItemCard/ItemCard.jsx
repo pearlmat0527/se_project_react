@@ -47,9 +47,9 @@ function ItemCard({ item, onClick, onCardLike }) {
             onClick={handleLike}
           >
             <img
-              className="item-card__like-icon"
+              className="item-card__like-icon" 
               src={isLiked ? HEART_LIKED : HEART_DEFAULT}
-              alt=""
+              alt="Liked image"
             />
           </button>
         )}

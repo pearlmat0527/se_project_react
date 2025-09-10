@@ -1,7 +1,6 @@
-// src/components/LoginModal/LoginModal.jsx
 import { useMemo, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import "./LoginModal.css"; // <-- add this
+import "./LoginModal.css";
 
 export default function LoginModal({
   isOpen,
@@ -15,13 +14,13 @@ export default function LoginModal({
   const [password, setPassword] = useState("");
 
   const canSubmit = useMemo(
-    () => email.trim() && password.trim(),
+    () => Boolean(email.trim() && password.trim()),
     [email, password]
   );
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!canSubmit) return;
+    if (!canSubmit || isLoading) return;
     onLogin({ email: email.trim(), password });
   };
 
@@ -39,7 +38,6 @@ export default function LoginModal({
       onSubmit={handleSubmit}
       buttonText={isLoading ? "Signing in…" : "Log in"}
       isSubmitDisabled={isLoading || !canSubmit}
-      /* BEM hooks passed down to the modal wrapper */
       modalClassName="login-modal"
       contentClassName="login-modal__content"
       submitButtonClassName="login-modal__submit"
@@ -87,6 +85,14 @@ export default function LoginModal({
 
       {onSwitchToRegister && (
         <div className="login-modal__actions">
+          <button
+            type="submit"
+            className="login-modal__button"
+            disabled={isLoading || !canSubmit}
+          >
+            {isLoading ? "Signing in…" : "Log in"}
+          </button>
+
           <button
             type="button"
             className="login-modal__switch"
